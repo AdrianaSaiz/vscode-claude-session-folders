@@ -1,0 +1,17 @@
+{
+  "view.folders": "Carpetas",
+  "cmd.newSession": "Nueva sesión de Claude",
+  "cmd.refresh": "Refrescar",
+  "cmd.newFolder": "Nueva carpeta",
+  "cmd.toggleGrouping": "Cambiar agrupación (Carpetas / Carpetas + Fechas / Fechas)",
+  "cmd.assignToFolder": "Mover a carpeta…",
+  "cmd.removeFromFolder": "Quitar de la carpeta",
+  "cmd.resumeSession": "Abrir sesión",
+  "cmd.renameFolder": "Renombrar carpeta",
+  "cmd.setFolderColor": "Cambiar color…",
+  "cmd.deleteFolder": "Eliminar carpeta",
+  "config.claudeDir": "Directorio de datos de Claude Code (donde vive projects/)",
+  "config.onlyCurrentProject": "Mostrar solo las sesiones del workspace abierto en vez de todos los proyectos",
+  "cmd.newSessionInFolder": "Nuevo chat en esta carpeta",
+  "welcome.contents": "Organiza tus chats de Claude Code en carpetas por cliente o proyecto.\n[Crea tu primera carpeta](command:claudeSessionFolders.newFolder)"
+}

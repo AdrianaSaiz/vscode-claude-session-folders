@@ -1,0 +1,17 @@
+{
+  "view.folders": "Folders",
+  "cmd.newSession": "New Claude Session",
+  "cmd.refresh": "Refresh",
+  "cmd.newFolder": "New Folder",
+  "cmd.toggleGrouping": "Switch Grouping (Folders / Folders + Dates / Dates)",
+  "cmd.assignToFolder": "Move to Folder…",
+  "cmd.removeFromFolder": "Remove from Folder",
+  "cmd.resumeSession": "Open Session",
+  "cmd.renameFolder": "Rename Folder",
+  "cmd.setFolderColor": "Change Color…",
+  "cmd.deleteFolder": "Delete Folder",
+  "config.claudeDir": "Claude Code data directory (where projects/ lives)",
+  "config.onlyCurrentProject": "Show only sessions from the current workspace instead of all projects",
+  "cmd.newSessionInFolder": "New Chat in This Folder",
+  "welcome.contents": "Organize your Claude Code chats into folders by client or project.\n[Create your first folder](command:claudeSessionFolders.newFolder)"
+}

@@ -1,0 +1,176 @@
+{
+  "name": "claude-session-folders",
+  "displayName": "Claude Session Folders",
+  "description": "Organize your Claude Code sessions into colored folders, grouped by day",
+  "version": "0.1.0",
+  "publisher": "adrianasaiz",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AdrianaSaiz/vscode-claude-session-folders"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "icon": "media/logo.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "claude",
+    "claude-code",
+    "sessions",
+    "chats",
+    "folders"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "views": {
+      "claude-sessions-sidebar": [
+        {
+          "id": "claudeSessionFolders.tree",
+          "name": "%view.folders%"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "claudeSessionFolders.newSession",
+        "title": "%cmd.newSession%",
+        "icon": "$(add)"
+      },
+      {
+        "command": "claudeSessionFolders.newSessionInFolder",
+        "title": "%cmd.newSessionInFolder%",
+        "icon": "$(comment-add)"
+      },
+      {
+        "command": "claudeSessionFolders.refresh",
+        "title": "%cmd.refresh%",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "claudeSessionFolders.newFolder",
+        "title": "%cmd.newFolder%",
+        "icon": "$(new-folder)"
+      },
+      {
+        "command": "claudeSessionFolders.toggleGrouping",
+        "title": "%cmd.toggleGrouping%",
+        "icon": "$(arrow-swap)"
+      },
+      {
+        "command": "claudeSessionFolders.assignToFolder",
+        "title": "%cmd.assignToFolder%"
+      },
+      {
+        "command": "claudeSessionFolders.removeFromFolder",
+        "title": "%cmd.removeFromFolder%"
+      },
+      {
+        "command": "claudeSessionFolders.resumeSession",
+        "title": "%cmd.resumeSession%"
+      },
+      {
+        "command": "claudeSessionFolders.renameFolder",
+        "title": "%cmd.renameFolder%"
+      },
+      {
+        "command": "claudeSessionFolders.setFolderColor",
+        "title": "%cmd.setFolderColor%"
+      },
+      {
+        "command": "claudeSessionFolders.deleteFolder",
+        "title": "%cmd.deleteFolder%"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "claudeSessionFolders.newSession",
+          "when": "view == claudeSessionFolders.tree",
+          "group": "navigation@0"
+        },
+        {
+          "command": "claudeSessionFolders.newFolder",
+          "when": "view == claudeSessionFolders.tree",
+          "group": "navigation@1"
+        },
+        {
+          "command": "claudeSessionFolders.toggleGrouping",
+          "when": "view == claudeSessionFolders.tree",
+          "group": "navigation@2"
+        },
+        {
+          "command": "claudeSessionFolders.refresh",
+          "when": "view == claudeSessionFolders.tree",
+          "group": "navigation@3"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "claudeSessionFolders.newSessionInFolder",
+          "when": "view == claudeSessionFolders.tree && viewItem == folder",
+          "group": "0_new@0"
+        },
+        {
+          "command": "claudeSessionFolders.assignToFolder",
+          "when": "view == claudeSessionFolders.tree && viewItem =~ /session/",
+          "group": "1_org@1"
+        },
+        {
+          "command": "claudeSessionFolders.removeFromFolder",
+          "when": "view == claudeSessionFolders.tree && viewItem == sessionInFolder",
+          "group": "1_org@2"
+        },
+        {
+          "command": "claudeSessionFolders.resumeSession",
+          "when": "view == claudeSessionFolders.tree && viewItem =~ /session/",
+          "group": "2_open@1"
+        },
+        {
+          "command": "claudeSessionFolders.renameFolder",
+          "when": "view == claudeSessionFolders.tree && viewItem == folder",
+          "group": "1_org@1"
+        },
+        {
+          "command": "claudeSessionFolders.setFolderColor",
+          "when": "view == claudeSessionFolders.tree && viewItem == folder",
+          "group": "1_org@2"
+        },
+        {
+          "command": "claudeSessionFolders.deleteFolder",
+          "when": "view == claudeSessionFolders.tree && viewItem == folder",
+          "group": "3_danger@1"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Claude Session Folders",
+      "properties": {
+        "claudeSessionFolders.claudeDir": {
+          "type": "string",
+          "default": "~/.claude",
+          "description": "%config.claudeDir%"
+        },
+        "claudeSessionFolders.onlyCurrentProject": {
+          "type": "boolean",
+          "default": false,
+          "description": "%config.onlyCurrentProject%"
+        }
+      }
+    },
+    "viewsWelcome": [
+      {
+        "view": "claudeSessionFolders.tree",
+        "contents": "%welcome.contents%"
+      }
+    ]
+  },
+  "l10n": "./l10n"
+}
